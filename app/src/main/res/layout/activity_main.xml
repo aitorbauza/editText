@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- TextView 1 -->
+    <TextView
+        android:id="@+id/article_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#101DCE"
+        android:padding="@dimen/padding_regular"
+        android:text="@string/article_title"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- ScrollView que contiene el artículo, botones y otros elementos -->
+    <ScrollView
+        android:id="@+id/article_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/article_heading"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Contenedor de columnas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="8dp">
+
+                <!-- TextView 2 -->
+                <TextView
+                    android:id="@+id/article_subheading"
+                    android:layout_width="170dp"
+                    android:layout_height="250dp"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:text="@string/article_subtitle"
+                    android:textAppearance="@android:style/TextAppearance"
+                    android:textSize="23dp" />
+
+                <!-- TextView 3 -->
+                <TextView
+                    android:id="@+id/article"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:autoLink="web"
+                    android:lineSpacingExtra="@dimen/line_spacing"
+                    android:paddingStart="8dp"
+                    android:text="@string/article_text"
+                    android:textColor="#333333"
+                    android:textSize="11dp" />
+            </LinearLayout>
+
+            <!-- EditText para editar el texto de @id/article -->
+            <EditText
+                android:id="@+id/edit_article_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D1D1D1"
+                android:hint="Edita el texto aquí..."
+                android:padding="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/saved_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="145dp"
+                android:textColor="#000000"
+                android:textSize="12dp" />
+
+            <!-- EditText que aparecerá al pulsar el botón -->
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="145dp"
+                android:background="#D1D1D1"
+                android:hint="Escriba algo..."
+                android:padding="8dp"
+                android:visibility="gone" />
+
+            <!-- Contenedor para los botones -->
+            <LinearLayout
+                android:id="@+id/bottom_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- Botón 1 -->
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="#B3AAAA"
+                    android:padding="12dp"
+                    android:text="ADD COMMENT"
+                    android:textColor="@color/black"
+                    app:cornerRadius="0px" />
+
+                <!-- Botón 2 -->
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="130dp"
+                    android:layout_height="55dp"
+                    android:backgroundTint="#B3AAAA"
+                    android:padding="12dp"
+                    android:text="EDIT TEXT"
+                    android:textColor="@color/black"
+                    app:cornerRadius="0px" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
